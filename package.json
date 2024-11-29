@@ -23,7 +23,12 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
-    "electron-updater": "^6.1.7"
+    "@monaco-editor/react": "^4.6.0",
+    "electron-updater": "^6.1.7",
+    "monaco-editor": "^0.47.0",
+    "monaco-vim": "^0.4.1",
+    "react-icons": "^5.3.0",
+    "sucrase": "^3.35.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",
@@ -38,6 +43,9 @@
     "electron-vite": "^2.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.3",
+    "postcss": "^8.4.49",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.1.1",
     "prettier": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

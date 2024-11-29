@@ -1,11 +1,17 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { initMonaco } from "./monaco-config";
+import App from "./App";
+import { LocalStateProvider } from "./context/LocalState";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+initMonaco().then(() => {
+  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <React.StrictMode>
+      <LocalStateProvider>
+        <App />
+      </LocalStateProvider>
+    </React.StrictMode>,
+  );
+});
