@@ -2,6 +2,8 @@
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+  background-color: #1a1b26;
   height: 100vh;
   width: 100vw;
   position: relative;

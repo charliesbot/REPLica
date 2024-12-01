@@ -49,6 +49,7 @@ const WrappedCodeEditor: FC<MonacoEditorProps> = (props) => {
         ...options,
         fontFamily: fontFamily,
         fontSize: 16,
+        domReadOnly: true,
       }}
     />
   );

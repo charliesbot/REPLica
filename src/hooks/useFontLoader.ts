@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useMonaco } from "@monaco-editor/react";
-import { useLocalState } from "../context/LocalState";
 import { fonts } from "../configs/fontOptions";
+import { useLocalState } from "../context/LocalState";
 
 export const useFontLoader = () => {
   const { settings } = useLocalState();

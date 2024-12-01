@@ -1,0 +1,33 @@
+.label {
+  display: grid;
+  grid-template-columns: 1em auto;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input {
+  appearance: none;
+  margin: 0;
+  color: currentColor;
+  width: 24px;
+  height: 24px;
+  border: 0.15em solid currentColor;
+  border-radius: 6px;
+  place-content: center;
+}
+
+.input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: CanvasText;
+}
+
+.input:checked::before {
+  transform: scale(1);
+}

@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  font-size: 14px;
+  padding: 2px;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: neutral.400;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding-right: 2rem; /* space for the icon */
+}
+
+.svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
