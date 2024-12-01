@@ -1,50 +1,58 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
-import "./App.css";
+import { useEffect, useRef, useState } from "react";
+import { useMonaco } from "@monaco-editor/react";
+import { resultsViewEditorConfig } from "./configs/resultsViewEditorConfig";
+import { ActionBar } from "./components/ActionBar";
+import { CodeEditor } from "./components/CodeEditor/CodeEditor";
+import { EditorTheme } from "./configs/themeOptions";
+import { WrappedCodeEditor } from "./components/WrappedCodeEditor";
+import { tokyoNightTheme } from "./themes/tokyoNight";
+import styles from "./App.module.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const [code, setCode] = useState<string | undefined>("");
+  const [results, setResults] = useState<string | undefined>();
+  const settingsDialogRef = useRef<HTMLDialogElement>(null);
+  const handleRunRef = useRef<() => void>(() => {});
+  const theme: EditorTheme = "tokyo-night";
+  const language = "typescript";
+  const monaco = useMonaco();
+  // const { settings } = useLocalState();
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  const handleRun = async () => {};
+
+  const openSettings = () => {
+    settingsDialogRef.current?.showModal();
+  };
+
+  useEffect(() => {
+    // TODO - convert this into a theme hook
+    if (monaco) {
+      monaco.editor.defineTheme("tokyo-night", tokyoNightTheme);
+      monaco.editor.setTheme("tokyo-night");
+    }
+  }, [monaco]);
+
+  useEffect(() => {
+    handleRunRef.current = handleRun;
+  }, [handleRun]);
 
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={styles.container}>
+      <div className={styles.actionBarContainer}>
+        <ActionBar onRun={handleRun} onOpenSettings={openSettings} />
       </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
+      <div className={styles.codeEditorContainer}>
+        <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
+      </div>
+      <div className={styles.resultsViewContainer}>
+        <WrappedCodeEditor
+          code={results}
+          theme={theme}
+          language={language}
+          options={resultsViewEditorConfig}
         />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+      </div>
+    </div>
   );
 }
 

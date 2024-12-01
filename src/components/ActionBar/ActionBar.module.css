@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  background-color: #1a1b26;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 1024px;
+  min-width: 300px;
+  padding: 10px 20px;
+  background: rgba(40, 40, 40, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradientButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, #ff1493, #ff69b4);
+  box-shadow: 0 2px 10px rgba(255, 20, 147, 0.5);
+}
+
+.baseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+}
