@@ -12,13 +12,13 @@
 }
 
 .codeEditorContainer {
-  grid-column: 0;
+  grid-column: 1;
   grid-row: 2;
   overflow: hidden;
 }
 
 .resultsViewContainer {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 2;
   overflow: hidden;
 }
