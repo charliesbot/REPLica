@@ -1,0 +1,1 @@
+export { VimStatusLine } from "./VimStatusLine";

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { KeyCode, KeyMod } from "monaco-editor";
 import { useMonaco } from "@monaco-editor/react";
 import { resultsViewEditorConfig } from "./configs/resultsViewEditorConfig";
-import { ActionBar } from "./components/ActionBar";
+import { LuPlay } from "react-icons/lu";
 import { CodeEditor } from "./components/CodeEditor/CodeEditor";
+import { NavigationRail } from "./components/NavigationRail";
 import { EditorTheme } from "./configs/themeOptions";
 import { WrappedCodeEditor } from "./components/WrappedCodeEditor";
 import { tokyoNightTheme } from "./themes/tokyoNight";
@@ -10,7 +12,7 @@ import { runJavascript } from "./runners/javascript";
 import { useLocalState } from "./context/LocalState";
 import { SettingsDialog } from "./components/SettingsDialog/SettingsDialog";
 import styles from "./App.module.css";
-import { KeyCode, KeyMod } from "monaco-editor";
+import { FAB } from "./components/FAB";
 
 function App() {
   const [code, setCode] = useState<string | undefined>("");
@@ -55,9 +57,12 @@ function App() {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.actionBarContainer}>
+        <NavigationRail
+          top={<FAB icon={<LuPlay size={24} color="rgb(46, 16, 101)" />} onClick={handleRun} />}
+        />
+        {/* <div className={styles.actionBarContainer}>
           <ActionBar onRun={handleRun} onOpenSettings={openSettings} />
-        </div>
+        </div> */}
         <div className={styles.codeEditorContainer}>
           <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
         </div>
