@@ -5,27 +5,37 @@
   gap: 18px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .input {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
   appearance: none;
   margin: 0;
   color: currentColor;
-  width: 24px;
-  height: 24px;
-  border: 0.15em solid currentColor;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: rgb(63, 63, 70);
   border-radius: 6px;
   place-content: center;
+}
+
+.input:checked {
+  background-color: rgb(139, 92, 246);
 }
 
 .input::before {
   content: "";
   width: 10px;
   height: 10px;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  background-color: CanvasText;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transition: 120ms transform cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
 }
 
 .input:checked::before {

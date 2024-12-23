@@ -10,6 +10,7 @@ type Props = {
 
 const Checkbox: FC<Props> = (props) => {
   const { id, label, isChecked, onClick } = props;
+  console.log("TEST ", isChecked);
 
   return (
     <label className={styles.label}>

@@ -1,3 +1,7 @@
+:root {
+  font-family: "Inter", sans-serif;
+}
+
 .container {
   display: grid;
   grid-template-rows: 100%;

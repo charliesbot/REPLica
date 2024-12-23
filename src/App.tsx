@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { KeyCode, KeyMod } from "monaco-editor";
 import { useMonaco } from "@monaco-editor/react";
 import { resultsViewEditorConfig } from "./configs/resultsViewEditorConfig";
-import { LuPlay } from "react-icons/lu";
+import { LuSettings } from "react-icons/lu";
+import { HiMiniPlay } from "react-icons/hi2";
 import { CodeEditor } from "./components/CodeEditor/CodeEditor";
 import { NavigationRail } from "./components/NavigationRail";
 import { EditorTheme } from "./configs/themeOptions";
@@ -58,11 +59,14 @@ function App() {
     <>
       <div className={styles.container}>
         <NavigationRail
-          top={<FAB icon={<LuPlay size={24} color="rgb(46, 16, 101)" />} onClick={handleRun} />}
+          top={<FAB icon={<HiMiniPlay size={24} color="rgb(46, 16, 101)" />} onClick={handleRun} />}
+          bottom={
+            <NavigationRail.Item
+              icon={<LuSettings size={24} color="white" />}
+              onClick={openSettings}
+            />
+          }
         />
-        {/* <div className={styles.actionBarContainer}>
-          <ActionBar onRun={handleRun} onOpenSettings={openSettings} />
-        </div> */}
         <div className={styles.codeEditorContainer}>
           <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
         </div>
@@ -75,7 +79,7 @@ function App() {
           />
         </div>
       </div>
-      <SettingsDialog dialogRef={settingsDialogRef} />
+      <SettingsDialog ref={settingsDialogRef} />
     </>
   );
 }

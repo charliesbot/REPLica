@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  height: 40px;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: rgb(196, 181, 253);
+  font-weight: 400;
+}
+
+.button:hover {
+  background-color: rgba(167, 139, 250, 0.14);
+}
+
+.text {
+  background-color: transparent;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
