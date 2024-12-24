@@ -26,8 +26,9 @@ function App() {
   const { settings } = useLocalState();
 
   const handleRun = async () => {
-    const resultsText = runJavascript(code).join("\n");
-    setResults(resultsText);
+    const resultsText = await runJavascript(code);
+    console.log("resultsText", resultsText);
+    setResults(resultsText.join("\n"));
   };
 
   const openSettings = () => {
