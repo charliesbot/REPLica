@@ -6,12 +6,11 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.1px;
-  font-weight: 400;
   border: none;
   border-radius: 9999px;
   cursor: pointer;
   color: rgb(196, 181, 253);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .button:hover {

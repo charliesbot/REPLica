@@ -18,11 +18,11 @@ import { FAB } from "./components/FAB";
 function App() {
   const [code, setCode] = useState<string | undefined>("");
   const [results, setResults] = useState<string | undefined>();
-  const settingsDialogRef = useRef<HTMLDialogElement>(null);
   const handleRunRef = useRef<() => void>(() => {});
   const theme: EditorTheme = "tokyo-night";
   const language = "typescript";
   const monaco = useMonaco();
+  const [isSettingsDialogOpen, setIsSettingsDialogOpen] = useState(false);
   const { settings } = useLocalState();
 
   const handleRun = async () => {
@@ -31,7 +31,7 @@ function App() {
   };
 
   const openSettings = () => {
-    settingsDialogRef.current?.showModal();
+    setIsSettingsDialogOpen(true);
   };
 
   useEffect(() => {
@@ -79,7 +79,10 @@ function App() {
           />
         </div>
       </div>
-      <SettingsDialog ref={settingsDialogRef} />
+      <SettingsDialog
+        isOpen={isSettingsDialogOpen}
+        onClose={() => setIsSettingsDialogOpen(false)}
+      />
     </>
   );
 }

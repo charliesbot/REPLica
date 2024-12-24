@@ -8,8 +8,12 @@ type Props = {
 };
 
 const Button: FC<Props> = (props) => {
-  const { children, variant = "filled" } = props;
-  return <button className={`${styles.button} ${styles[variant]}`}>{children}</button>;
+  const { children, variant = "filled", onClick } = props;
+  return (
+    <button onClick={onClick} className={`${styles.button} ${styles[variant]}`}>
+      {children}
+    </button>
+  );
 };
 
 export { Button };

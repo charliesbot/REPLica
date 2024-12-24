@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { EditorFont, fontOptions } from "../../configs/fontOptions";
 import { EditorTheme, themeOptions } from "../../configs/themeOptions";
 import { useLocalState } from "../../context/LocalState";
@@ -6,16 +6,37 @@ import { Checkbox } from "../Checkbox";
 import { Dropdown } from "../Dropdown";
 import { Label } from "../Label";
 import { Column } from "../Column";
-import styles from "./SettingsDialog.module.css";
 import { Button } from "../Button";
+import styles from "./SettingsDialog.module.css";
 
-type Props = {};
+type Props = {
+  isOpen: boolean;
+  onClose: () => void;
+};
 
-const SettingsDialog = forwardRef<HTMLDialogElement, Props>((props, ref) => {
+const SettingsDialog: FC<Props> = (props) => {
   const { settings, updateSetting } = useLocalState();
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (props.isOpen) {
+      if (!dialog?.open) {
+        dialog?.showModal();
+      }
+    } else {
+      if (dialog?.open) {
+        dialog?.close();
+      }
+    }
+  }, [props.isOpen]);
+
+  if (!props.isOpen) {
+    return null;
+  }
 
   return (
-    <dialog ref={ref} className={styles.dialog}>
+    <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.header}>
         <h1 className={styles.title}>Settings</h1>
       </div>
@@ -51,11 +72,13 @@ const SettingsDialog = forwardRef<HTMLDialogElement, Props>((props, ref) => {
         />
       </Column>
       <div className={styles.footer}>
-        <Button variant="text">Cancel</Button>
-        <Button variant="outlined">Accept</Button>
+        {/* <Button variant="text">Cancel</Button> */}
+        <Button variant="outlined" onClick={props.onClose}>
+          Accept
+        </Button>
       </div>
     </dialog>
   );
-});
+};
 
 export { SettingsDialog };
