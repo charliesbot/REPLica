@@ -4,6 +4,39 @@
   font-weight: 100 900;
 }
 
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("../src/assets/fonts/JetBrainsMono.ttf") format("truetype-variations");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("../src/assets/fonts/CascadiaCode.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("../src/assets/fonts/UbuntuMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("../src/assets/fonts/FiraCode.ttf") format("truetype-variations");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("../src/assets/fonts/RobotoMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   font-family: "ReadexPro", sans-serif;
 }

@@ -10,7 +10,6 @@ import { EditorTheme } from "./configs/themeOptions";
 import { WrappedCodeEditor } from "./components/WrappedCodeEditor";
 import { tokyoNightTheme } from "./themes/tokyoNight";
 import { runJavascript } from "./runners/javascript";
-import { useLocalState } from "./context/LocalState";
 import { SettingsDialog } from "./components/SettingsDialog/SettingsDialog";
 import styles from "./App.module.css";
 import { FAB } from "./components/FAB";
@@ -24,7 +23,6 @@ function App() {
   const language = "typescript";
   const monaco = useMonaco();
   const [isSettingsDialogOpen, setIsSettingsDialogOpen] = useState(false);
-  const { settings } = useLocalState();
 
   const handleRun = async () => {
     const resultsText = await runJavascript(code);
