@@ -18,10 +18,15 @@ interface MonacoEditorProps {
 
 const baseOptions: Options = {
   scrollBeyondLastLine: false,
+  wrappingIndent: "indent",
+  wordWrap: "on",
   minimap: { enabled: false },
-  lineNumbers: "off",
+  glyphMargin: false,
+  inlayHints: { enabled: "off" },
+  lineNumbers: "on",
+  fontSize: 14,
   scrollbar: {
-    vertical: "hidden",
+    vertical: "auto",
   },
   padding: {
     top: 20,

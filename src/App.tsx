@@ -14,6 +14,7 @@ import { useLocalState } from "./context/LocalState";
 import { SettingsDialog } from "./components/SettingsDialog/SettingsDialog";
 import styles from "./App.module.css";
 import { FAB } from "./components/FAB";
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 function App() {
   const [code, setCode] = useState<string | undefined>("");
@@ -68,17 +69,24 @@ function App() {
             />
           }
         />
-        <div className={styles.codeEditorContainer}>
-          <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
-        </div>
-        <div className={styles.resultsViewContainer}>
-          <WrappedCodeEditor
-            code={results}
-            theme={theme}
-            language={language}
-            options={resultsViewEditorConfig}
-          />
-        </div>
+        <PanelGroup autoSaveId="persistence" direction="horizontal">
+          <Panel defaultSize={70} minSize={20}>
+            <div className={styles.codeEditorContainer}>
+              <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
+            </div>
+          </Panel>
+          <PanelResizeHandle className={styles.panelResizeHandle} />
+          <Panel defaultSize={30} minSize={20}>
+            <div className={styles.resultsViewContainer}>
+              <WrappedCodeEditor
+                code={results}
+                theme={theme}
+                language={language}
+                options={resultsViewEditorConfig}
+              />
+            </div>
+          </Panel>
+        </PanelGroup>
       </div>
       <SettingsDialog
         isOpen={isSettingsDialogOpen}

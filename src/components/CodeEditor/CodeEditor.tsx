@@ -2,10 +2,10 @@ import { FC, useCallback, useRef, useState } from "react";
 import { OnChange, EditorProps, OnMount } from "@monaco-editor/react";
 import { EditorType, EditorLanguage } from "../../types/codeEditorTypes";
 import { EditorTheme } from "../../configs/themeOptions";
-import styles from "./CodeEditor.module.css";
 import { useVim } from "../../hooks/useVim";
 import { WrappedCodeEditor } from "../WrappedCodeEditor";
 import { VimStatusLine } from "../VimStatusLine";
+import styles from "./CodeEditor.module.css";
 
 type Options = EditorProps["options"];
 
@@ -16,23 +16,6 @@ interface MonacoEditorProps {
   theme: EditorTheme;
   options?: Options;
 }
-
-const baseOptions: Options = {
-  scrollBeyondLastLine: false,
-  minimap: { enabled: false },
-  glyphMargin: false,
-  inlayHints: { enabled: "off" },
-  lineNumbers: "off",
-  fontSize: 14,
-  scrollbar: {
-    vertical: "auto",
-  },
-  padding: {
-    top: 20,
-    bottom: 20,
-  },
-  automaticLayout: true,
-};
 
 const CodeEditor: FC<MonacoEditorProps> = (props) => {
   const { code, onChange, language, theme, options = {} } = props;
@@ -61,7 +44,7 @@ const CodeEditor: FC<MonacoEditorProps> = (props) => {
         language={language}
         onChange={handleEditorChange}
         theme={theme}
-        options={{ ...baseOptions, ...options }}
+        options={options}
       />
       <VimStatusLine ref={vimStatusLineRef} />
     </div>

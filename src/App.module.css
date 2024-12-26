@@ -9,9 +9,7 @@
 }
 
 .container {
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 80px 1fr 1fr;
+  display: flex;
   background-color: #1a1b26;
   height: 100vh;
   width: 100vw;
@@ -19,15 +17,21 @@
 }
 
 .actionBarContainer {
-  grid-column: 1 / -1;
+  width: 80px;
 }
 
 .codeEditorContainer {
-  grid-column: 2;
+  height: 100%;
   overflow: hidden;
 }
 
 .resultsViewContainer {
-  grid-column: 3;
+  height: 100%;
   overflow: hidden;
+}
+
+.panelResizeHandle {
+  background-color: rgb(196, 181, 253);
+  height: 100%;
+  width: 1px;
 }
