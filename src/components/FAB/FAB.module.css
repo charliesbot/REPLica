@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  padding: 16px;
+  border: none;
+  background-color: rgb(196, 181, 253);
+}
+
+.container:hover {
+  cursor: pointer;
+  background-color: rgb(167, 139, 250);
+}

@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  background-color: rgb(24, 24, 27);
+  padding: 16px;
+}
+
+.top,
+.center,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.bottom {
+  justify-content: flex-end;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  height: 56px;
+  width: 56px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.item:hover {
+  background-color: rgb(63, 63, 70);
+}

@@ -1,0 +1,36 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 28px;
+  padding: 24px;
+  background-color: rgb(24, 24, 27);
+  border: none;
+  color: white;
+  gap: 24px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
