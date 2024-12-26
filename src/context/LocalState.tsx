@@ -6,12 +6,14 @@ type Settings = {
   vimMode: boolean;
   theme: EditorTheme;
   font: EditorFont;
+  fontSize: number;
 };
 
 const defaultSettings: Settings = {
   vimMode: false,
   theme: "tokyo-night",
   font: "jetbrains-mono",
+  fontSize: 14,
 };
 
 type LocalStateContextType = {

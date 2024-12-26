@@ -1,0 +1,13 @@
+.container {
+  background-color: transparent;
+  border: solid 1px rgb(39, 39, 42);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  padding: 12px;
+}
+
+.container:focus {
+  border-color: rgb(196, 181, 253);
+  outline: none;
+}

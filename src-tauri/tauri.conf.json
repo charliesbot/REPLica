@@ -12,6 +12,7 @@
   "app": {
     "windows": [
       {
+        "transparent": true,
         "title": "REPLica",
         "width": 1200,
         "height": 800

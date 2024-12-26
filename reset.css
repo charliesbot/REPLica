@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: rgb(24, 24, 27);
+}
+
 /* 2. Remove default margin */
 * {
   margin: 0;

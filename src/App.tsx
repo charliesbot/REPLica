@@ -67,13 +67,13 @@ function App() {
           }
         />
         <PanelGroup autoSaveId="persistence" direction="horizontal">
-          <Panel defaultSize={70} minSize={20}>
+          <Panel defaultSize={75} minSize={20}>
             <div className={styles.codeEditorContainer}>
               <CodeEditor code={code} onChange={setCode} theme={theme} language={language} />
             </div>
           </Panel>
           <PanelResizeHandle className={styles.panelResizeHandle} />
-          <Panel defaultSize={30} minSize={20}>
+          <Panel defaultSize={25} minSize={20}>
             <div className={styles.resultsViewContainer}>
               <WrappedCodeEditor
                 code={results}

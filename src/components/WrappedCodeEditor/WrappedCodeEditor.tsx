@@ -3,6 +3,7 @@ import { Editor, OnChange, EditorProps, OnMount } from "@monaco-editor/react";
 import { EditorLanguage } from "../../types/codeEditorTypes";
 import { EditorTheme } from "../../configs/themeOptions";
 import { useFontLoader } from "../../hooks/useFontLoader";
+import { useLocalState } from "../../context/LocalState";
 
 type Options = EditorProps["options"];
 
@@ -25,7 +26,6 @@ const baseOptions: Options = {
   glyphMargin: false,
   inlayHints: { enabled: "off" },
   lineNumbers: "off",
-  fontSize: 14,
   scrollbar: {
     vertical: "auto",
   },
@@ -38,6 +38,7 @@ const baseOptions: Options = {
 
 const WrappedCodeEditor: FC<MonacoEditorProps> = (props) => {
   const { code, onChange, language, theme, options = {}, onMount, height } = props;
+  const { settings } = useLocalState();
   const fontFamily = useFontLoader();
 
   return (
@@ -53,7 +54,7 @@ const WrappedCodeEditor: FC<MonacoEditorProps> = (props) => {
         ...baseOptions,
         ...options,
         fontFamily: fontFamily,
-        fontSize: 16,
+        fontSize: settings.fontSize,
         domReadOnly: true,
       }}
     />

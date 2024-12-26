@@ -8,6 +8,7 @@ import { Label } from "../Label";
 import { Column } from "../Column";
 import { Button } from "../Button";
 import styles from "./SettingsDialog.module.css";
+import { Input } from "../Input";
 
 type Props = {
   isOpen: boolean;
@@ -60,6 +61,16 @@ const SettingsDialog: FC<Props> = (props) => {
             updateSetting("font", event.target.value as EditorFont);
           }}
           value={settings.font}
+        />
+      </Column>
+      <Column gap={10}>
+        <Label htmlFor="fontSize">Font Size</Label>
+        <Input
+          id="fontSize"
+          onChange={(event) => {
+            updateSetting("fontSize", parseInt(event.target.value));
+          }}
+          value={settings.fontSize.toString()}
         />
       </Column>
       <Column gap={10}>
