@@ -9,4 +9,16 @@
   height: 30px;
   width: 100%;
   background-color: #1a1b26;
+  color: white;
+}
+
+.container input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.container > span:first-child {
+  display: none;
 }

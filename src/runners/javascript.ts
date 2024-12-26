@@ -9,10 +9,8 @@ async function runJavascript(code: string | undefined): Promise<EvaluationResult
 
   try {
     const jsCode = await invoke<string>("parse_typescript", { code });
-    console.log("jsCode", jsCode);
     return await new Function(jsCode)();
   } catch (error: any) {
-    console.error("Execution error:", error);
     return [`Error: ${error.message}`];
   }
 }

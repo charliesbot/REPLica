@@ -28,7 +28,6 @@ function App() {
 
   const handleRun = async () => {
     const resultsText = await runJavascript(code);
-    console.log("resultsText", resultsText);
     setResults(resultsText.join("\n"));
   };
 
