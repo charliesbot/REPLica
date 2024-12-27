@@ -23,7 +23,7 @@ You can download the latest build of REPLica from the [Releases page](https://gi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/REPLica.git
+   git clone https://github.com/charliesbot/REPLica.git
    cd REPLica
    ```
 
@@ -34,7 +34,7 @@ You can download the latest build of REPLica from the [Releases page](https://gi
 
 ## Contributing
 
-We welcome contributions! If you have ideas for features, bug fixes, or improvements, feel free to open an issue or submit a pull request. Please follow the [contribution guidelines](CONTRIBUTING.md) to maintain a healthy collaboration environment.
+We welcome contributions! If you have ideas for features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
 ## License
 
