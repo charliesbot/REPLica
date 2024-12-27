@@ -1,4 +1,4 @@
-<div align="center"> <img src="./app-icon.png" alt="REPLica Logo" /> </div>
+<div align="center"> <img src="./app-icon.png" alt="REPLica Logo" style="max-width: 20%;"/> </div>
 
 # REPLica
 
