@@ -23,6 +23,8 @@
     }
   },
   "bundle": {
+    "publisher": "@charliesbot",
+    "copyright": "@charliesbot",
     "active": true,
     "targets": "all",
     "icon": [

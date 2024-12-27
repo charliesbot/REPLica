@@ -3,6 +3,18 @@
 version = 4
 
 [[package]]
+name = "REPLica"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "swc_core",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-shell",
+]
+
+[[package]]
 name = "addr2line"
 version = "0.24.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3025,18 +3037,6 @@ name = "relative-path"
 version = "1.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba39f3699c378cd8970968dcbff9c43159ea4cfbd88d43c00b22f2ef10a435d2"
-
-[[package]]
-name = "replica"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
- "swc_core",
- "tauri",
- "tauri-build",
- "tauri-plugin-shell",
-]
 
 [[package]]
 name = "reqwest"
