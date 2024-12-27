@@ -1,6 +1,6 @@
 [package]
 name = "REPLica"
-version = "0.1.0"
+version = "1.0.0"
 description = "A REPL for the modern age"
 authors = ["@charliesbot"]
 edition = "2021"
